@@ -1,0 +1,68 @@
+<body>
+    <svg id="canvas" width="auto" height="auto" style="position: fixed; z-index: -1;" xmlns="http://www.w3.org/2000/svg"></svg></br>
+    <label>Seed: </br><input id="seed" type="text" value="F" /></label></br></br>
+    <label>Rule: </br><input id="rule" type="text" value="F[-F][+F]" /></label></br></br>
+    <label>Turn: </br><input id="turn" type="number" value=10 /></label></br></br>
+    <label>Start Angle: </br><input id="startAngle" type="number" value=-90 /></label></br></br>
+    <label>Start X: </br><input id="startX" type="number" value=0 /></label></br></br>
+    <label>Start Y: </br><input id="startY" type="number" value=0 /></label></br></br>
+    <label>Length: </br><input id="length" type="number" value=20 /></label></br></br>
+    <label>Generations: </br><input id="generations" type="text" value="8" /></label></br></br>
+    <button type="button" id="generateBtn">Generate</button></br></br>    
+</body>
+<script>
+    document.getElementById("generateBtn").addEventListener("click", () => {
+        const canvas = document.getElementById("canvas");
+        canvas.innerHTML = "";
+
+        const seed = document.getElementById("seed").value;
+        const rule = document.getElementById("rule").value;
+        const turn = document.getElementById("turn").value;
+
+        const length = document.getElementById("length").value;
+        const generations = document.getElementById("generations").value;        
+
+        let currentX = canvas.width.baseVal.value / 2 + parseInt(document.getElementById("startX").value);
+        let currentY = canvas.height.baseVal.value / 2 + parseInt(document.getElementById("startY").value);
+        let currentAngle = parseFloat(document.getElementById("startAngle").value);
+
+        drawLSystem(seed, 1);        
+        
+        function drawLSystem(string, gen) {
+            for (let index = 0; index < string.length; index++) {
+                const char = string[index];
+                if (char === "F") {
+                    if (gen < generations) {
+                        drawLSystem(rule, gen + 1);
+                    } else {
+                        const newX = currentX + length * Math.cos(currentAngle * (Math.PI / 180));
+                        const newY = currentY + length * Math.sin(currentAngle * (Math.PI / 180));
+
+                        const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                        line.setAttribute("x1", currentX);
+                        line.setAttribute("y1", currentY);
+                        line.setAttribute("x2", newX);
+                        line.setAttribute("y2", newY);
+                        line.setAttribute("stroke", "black");
+                        canvas.appendChild(line);
+
+                        currentX = newX;
+                        currentY = newY;
+                    }
+                } else if (char === "+") {
+                    currentAngle += parseFloat(turn);
+                } else if (char === "-") {
+                    currentAngle -= parseFloat(turn);
+                } else if (char === "[") {
+                    const savedPos = { x: currentX, y: currentY, angle: currentAngle };
+                    index += drawLSystem(string.substring(index + 1), gen) + 1;
+                    currentX = savedPos.x;
+                    currentY = savedPos.y;
+                    currentAngle = savedPos.angle;
+                } else if (char === "]") {
+                    return index; 
+                }
+            }
+        }
+    });
+</script>
