@@ -1,0 +1,38 @@
+const examplesJson = {
+
+    "examples": [
+        {
+            "name": "Koch Triangle",
+            "seed": "F--F--F",
+            "rule": "F+F--F+F",
+            "turn": "60",
+            "startAngle": "0",
+            "startX": "0",
+            "startY": "0",
+            "length": "20",
+            "generations": "3"
+        },
+        {
+            "name": "Two-branch Tree", 
+            "seed": "F",
+            "rule": "F[-F][+F]",
+            "turn": "10",
+            "startAngle": "-90",
+            "startX": "0",
+            "startY": "0",
+            "length": "40",
+            "generations": "6"
+        },
+        {
+            "name": "Three-branch Tree",
+            "seed": "F",
+            "rule": "F[-F][+F][++F]",
+            "turn": "12",
+            "startAngle": "-90",
+            "startX": "0",
+            "startY": "0",
+            "length": "50",
+            "generations": "5"
+        }                
+    ]
+};
