@@ -1,0 +1,37 @@
+{
+    "examples": [
+        {
+            "name": "Koch Curve",
+            "seed": "F--F--F",
+            "rule": "F+F--F+F",
+            "turn": "60",
+            "startAngle": "0",
+            "startX": "0",
+            "startY": "0",
+            "length": "20",
+            "generations": "1"
+        },
+        {
+            "name": "Fractal Tree 1", 
+            "seed": "F",
+            "rule": "F[-F][+F]",
+            "turn": "10",
+            "startAngle": "-90",
+            "startX": "0",
+            "startY": "0",
+            "length": "40",
+            "generations": "6"
+        },
+        {
+            "name": "Fractal Tree 2",
+            "seed": "F",
+            "rule": "F[-F][+F]",
+            "turn": "10",
+            "startAngle": "-90",
+            "startX": "0",
+            "startY": "0",
+            "length": "20",
+            "generations": "8"
+        }                
+    ]
+}
