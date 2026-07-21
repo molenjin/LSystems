@@ -49,9 +49,9 @@
         const selected = JSON.parse(event.target.value);
         document.getElementById("seed").value = selected.seed;
         document.getElementById("rule").value = selected.rule;
-        document.getElementById("angle").value = parseFloat(selected.angle);
-        document.getElementById("startAngle").value = parseFloat(selected.startAngle);
-        document.getElementById("length").value = parseFloat(selected.length);
+        document.getElementById("angle").value = parseInt(selected.angle);
+        document.getElementById("startAngle").value = parseInt(selected.startAngle);
+        document.getElementById("length").value = parseInt(selected.length);
         document.getElementById("generations").value = parseInt(selected.generations);
 
         runSystem(selected.seed, selected.rule, selected.angle, selected.startAngle, selected.length, selected.generations);
