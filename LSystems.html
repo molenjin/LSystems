@@ -1,21 +1,42 @@
 <head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="LSystems.js" defer></script>
     <script src="Examples.js" defer></script>
 </head>
 
 <body>
-    <svg id="canvas" width="auto" height="auto" style="position: fixed; z-index: -1;"
-        xmlns="http://www.w3.org/2000/svg"></svg></br>
-    <label>Examples: </br><select name="examples" id="examples" holder=""></select></label></br></br>
-    <button type="button" id="generateBtn">Generate</button></br></br>
-    <label>Seed: </br><input id="seed" type="text" /></label></br></br>
-    <label>Rule: </br><input id="rule" type="text" /></label></br></br>
-    <label>Turn: </br><input id="turn" type="number" /></label></br></br>
-    <label>Start Angle: </br><input id="startAngle" type="number" /></label></br></br>
-    <label>Start X: </br><input id="startX" type="number" /></label></br></br>
-    <label>Start Y: </br><input id="startY" type="number" /></label></br></br>
-    <label>Length: </br><input id="length" type="number" /></label></br></br>
-    <label>Generations: </br><input id="generations" type="text" /></label></br></br>
+    <div class="container">
+        <div class="row">
+            <svg id="canvas" width="auto" height="auto" style="position: fixed; z-index: -1;"
+                xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <label>Examples:<select name="examples" class="form-select mb-3" id="examples" holder=""></select></label>
+            </div>           
+            <div class="col-md-2">
+                <label>Seed:<input id="seed" type="text" class="form-control mb-3" /></label>
+            </div>
+            <div class="col-md-2">
+                <label>Rule:<input id="rule" type="text" class="form-control mb-3" /></label>
+            </div>
+            <div class="col-md-1">
+                <label>Angle:<input id="angle" type="number" class="form-control mb-3" /></label>
+            </div>
+            <div class="col-md-1">
+                <label>Start Angle:<input id="startAngle" type="number" class="form-control mb-3" /></label>
+            </div>            
+            <div class="col-md-1">
+                <label>Length:<input id="length" type="number" class="form-control mb-3" /></label>
+            </div>
+            <div class="col-md-1">
+                <label>Generations:<input id="generations" type="text" class="form-control" /></label>
+            </div>
+            <div class="col-md-1">
+                </br><button type="button" class="btn btn-primary" id="runBtn">Run</button>
+            </div>            
+        </div>
+    </div>
 </body>
 
 <script type="module">
@@ -24,19 +45,21 @@
         examples.add(new Option(example.name, JSON.stringify(example)));
     });
 
-    document.getElementById("examples").addEventListener("change", (event) => {
-        const selectedExample = JSON.parse(event.target.value);
-        document.getElementById("seed").value = selectedExample.seed;
-        document.getElementById("rule").value = selectedExample.rule;
-        document.getElementById("turn").value = selectedExample.turn;
-        document.getElementById("startAngle").value = selectedExample.startAngle;
-        document.getElementById("startX").value = selectedExample.startX;
-        document.getElementById("startY").value = selectedExample.startY;
-        document.getElementById("length").value = selectedExample.length;
-        document.getElementById("generations").value = selectedExample.generations;
+    examples.addEventListener("change", (event) => {
+        const selected = JSON.parse(event.target.value);
+        document.getElementById("seed").value = selected.seed;
+        document.getElementById("rule").value = selected.rule;
+        document.getElementById("angle").value = selected.angle;
+        document.getElementById("startAngle").value = selected.startAngle;
+        document.getElementById("length").value = selected.length;
+        document.getElementById("generations").value = selected.generations;
+
+        runSystem(selected.seed, selected.rule, selected.angle, selected.startAngle, selected.length, selected.generations);
     });
 
-    document.getElementById("generateBtn").addEventListener("click", () => {
+    examples.dispatchEvent(new Event('change'));
+
+    document.getElementById("runBtn").addEventListener("click", () => {
 
         const allowedRegex = /^[F+\-\[\]]+$/;
 
@@ -66,9 +89,9 @@
 
         //-------------------------------------------------------------------
 
-        const turn = parseFloat(document.getElementById("turn").value);
-        if (isNaN(turn)) {
-            alert("Turn must be a number.");
+        const angle = parseFloat(document.getElementById("angle").value);
+        if (isNaN(angle)) {
+            alert("Angle must be a number.");
             return;
         }
 
@@ -80,23 +103,7 @@
             return;
         }
 
-        //-------------------------------------------------------------------
-
-        const startX = parseFloat(document.getElementById("startX").value);
-        if (isNaN(startX)) {
-            alert("Start X must be a number.");
-            return;
-        }
-
-        //-------------------------------------------------------------------
-
-        const startY = parseFloat(document.getElementById("startY").value);
-        if (isNaN(startY)) {
-            alert("Start Y must be a number.");
-            return;
-        }
-
-        //-------------------------------------------------------------------
+        //-------------------------------------------------------------------        
 
         const length = parseFloat(document.getElementById("length").value);
         if (isNaN(length)) {
@@ -126,6 +133,6 @@
 
         //-------------------------------------------------------------------
 
-        generateLSystem(seed, rule, turn, startAngle, startX, startY, length, generations);
+        runSystem(seed, rule, angle, startAngle, length, generations);
     });
 </script>

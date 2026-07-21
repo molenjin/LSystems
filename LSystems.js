@@ -1,13 +1,11 @@
-function generateLSystem(seed, rule, turn, startAngle, startX, startY, length, generations) {
+function runSystem(seed, rule, angle, startAngle, length, generations) {
     
     const canvas = document.getElementById("canvas");
     canvas.innerHTML = "";
 
-    let currentX = canvas.width.baseVal.value / 2 + startX;
-    let currentY = canvas.height.baseVal.value / 2 + startY;
-    let currentAngle = startAngle;
-
-    drawLSystem(seed, 1);
+    let currentX = canvas.width.baseVal.value / 2;
+    let currentY = canvas.height.baseVal.value / 2;
+    let currentAngle = parseFloat(startAngle);    
 
     function drawLSystem(string, gen) {
         for (let index = 0; index < string.length; index++) {
@@ -16,8 +14,8 @@ function generateLSystem(seed, rule, turn, startAngle, startX, startY, length, g
                 if (gen < generations) {
                     drawLSystem(rule, gen + 1);
                 } else {
-                    const newX = currentX + length * Math.cos(currentAngle * (Math.PI / 180));
-                    const newY = currentY + length * Math.sin(currentAngle * (Math.PI / 180));
+                    const newX = currentX + parseFloat(length) * Math.cos(currentAngle * (Math.PI / 180));
+                    const newY = currentY + parseFloat(length) * Math.sin(currentAngle * (Math.PI / 180));
 
                     const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
                     line.setAttribute("x1", currentX);
@@ -31,9 +29,9 @@ function generateLSystem(seed, rule, turn, startAngle, startX, startY, length, g
                     currentY = newY;
                 }
             } else if (char === "+") {
-                currentAngle += parseFloat(turn);
+                currentAngle += parseFloat(angle);
             } else if (char === "-") {
-                currentAngle -= parseFloat(turn);
+                currentAngle -= parseFloat(angle);
             } else if (char === "[") {
                 const savedPos = { x: currentX, y: currentY, angle: currentAngle };
                 index += drawLSystem(string.substring(index + 1), gen) + 1;
@@ -45,4 +43,6 @@ function generateLSystem(seed, rule, turn, startAngle, startX, startY, length, g
             }
         }
     }
+
+    drawLSystem(seed, 1);
 }
