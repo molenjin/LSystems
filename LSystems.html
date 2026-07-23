@@ -7,10 +7,6 @@
 <body>
     <div class="container">
         <div class="row">
-            <svg id="canvas" width="auto" height="auto" style="position: fixed; z-index: -1;"
-                xmlns="http://www.w3.org/2000/svg"></svg>
-        </div>
-        <div class="row">
             <div class="col-md-2">
                 <label>Examples:<select name="examples" class="form-select mb-3" id="examples" holder=""></select></label>
             </div>           
@@ -33,9 +29,12 @@
                 <label>Generations:<input id="generations" type="text" class="form-control" /></label>
             </div>
             <div class="col-md-1">
-                </br><button type="button" class="btn btn-primary" id="runBtn">Run</button>
+                </br><button type="button" class="btn btn-primary" id="runBtn" disabled>Run</button>
             </div>            
         </div>
+        <div class="ratio ratio-1x1">
+            <svg id="canvas" xmlns="http://www.w3.org/2000/svg"></svg>
+        </div>        
     </div>
 </body>
 
@@ -44,6 +43,8 @@
     examplesJson.examples.forEach(example => {
         examples.add(new Option(example.name, JSON.stringify(example)));
     });
+
+    const runBtn = document.getElementById("runBtn");
 
     examples.addEventListener("change", (event) => {
         const selected = JSON.parse(event.target.value);
@@ -54,10 +55,16 @@
         document.getElementById("length").value = parseInt(selected.length);
         document.getElementById("generations").value = parseInt(selected.generations);
 
+        runBtn.disabled = true;
+
         runSystem(selected.seed, selected.rule, selected.angle, selected.startAngle, selected.length, selected.generations);
     });
 
     examples.dispatchEvent(new Event('change'));
+
+    document.querySelectorAll("input").forEach(input => input.addEventListener("input", () => {
+        runBtn.disabled = false;
+    }));
 
     document.getElementById("runBtn").addEventListener("click", () => {
 
