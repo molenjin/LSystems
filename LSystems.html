@@ -1,4 +1,5 @@
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="LSystems.js" defer></script>
     <script src="Examples.js" defer></script>
@@ -6,30 +7,38 @@
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col-md-2">
-                <label>Examples:<select name="examples" class="form-select mb-3" id="examples" holder=""></select></label>
-            </div>           
-            <div class="col-md-2">
-                <label>Seed:<input id="seed" type="text" class="form-control mb-3" /></label>
+        <div class="row mb-3">
+            <div class="col">                
+                <span><strong>L-Systems</strong> by <a href="mailto:molenjin@gmail.com">Miroslav Olenjin</a></span>
             </div>
-            <div class="col-md-2">
-                <label>Rule:<input id="rule" type="text" class="form-control mb-3" /></label>
-            </div>
-            <div class="col-md-1">
-                <label>Angle:<input id="angle" type="number" class="form-control mb-3" /></label>
-            </div>
-            <div class="col-md-1">
-                <label>Start Angle:<input id="startAngle" type="number" class="form-control mb-3" /></label>
+            <div class="col text-end">
+                <a href="https://github.com/molenjin/LSystems">Source code</a>
             </div>            
-            <div class="col-md-1">
-                <label>Length:<input id="length" type="number" class="form-control mb-3" /></label>
+        </div>
+        <div class="row">
+            <div class="col-lg-2">
+                <label for="examples">Examples:</label><select name="examples" class="form-select mb-1" id="examples" holder=""></select>
+            </div>           
+            <div class="col-lg-2">
+                <label for="seed">Seed:</label><input id="seed" type="text" class="form-control mb-1" />
             </div>
-            <div class="col-md-1">
-                <label>Generations:<input id="generations" type="text" class="form-control" /></label>
+            <div class="col-lg-2">
+                <label for="rule">Rule:</label><input id="rule" type="text" class="form-control mb-1" />
             </div>
-            <div class="col-md-1">
-                </br><button type="button" class="btn btn-primary" id="runBtn" disabled>Run</button>
+            <div class="col-lg-1">
+                <label for="angle">Angle:</label><input id="angle" type="number" class="form-control mb-1" />
+            </div>
+            <div class="col-lg-1">
+                <label for="startAngle">Start Angle:</label><input id="startAngle" type="number" class="form-control mb-1" />
+            </div>            
+            <div class="col-lg-1">
+                <label for="length">Length:</label><input id="length" type="number" class="form-control mb-1" />
+            </div>
+            <div class="col-lg-1">
+                <label for="generations">Generations:</label><input id="generations" type="text" class="form-control mb-1" />
+            </div>
+            <div class="col-lg-1">
+                </br><button type="button" class="btn btn-primary w-100" id="runBtn" disabled>Run</button>
             </div>            
         </div>
         <div class="ratio ratio-1x1">
