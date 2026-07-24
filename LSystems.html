@@ -8,17 +8,14 @@
 <body>
     <div class="container">
         <div class="row mb-3">
-            <div class="col">                
-                <span><strong>L-Systems</strong> by <a href="mailto:molenjin@gmail.com">M.Olenjin</a></span>
-            </div>
-            <div class="col text-end">
-                <a href="https://github.com/molenjin/LSystems">GitHub</a>
-            </div>            
+            <span><strong>L-Systems</strong> by <a href="mailto:molenjin@gmail.com">M.Olenjin</a></span>
         </div>
+        <hr>
         <div class="row">
             <div class="col-lg-2">
-                <label for="examples">Examples:</label><select name="examples" class="form-select mb-1" id="examples" holder=""></select>
-            </div>           
+                <label for="examples">Examples:</label><select name="examples" class="form-select mb-1" id="examples"
+                    holder=""></select>
+            </div>
             <div class="col-lg-2">
                 <label for="seed">Seed:</label><input id="seed" type="text" class="form-control mb-1" />
             </div>
@@ -29,21 +26,27 @@
                 <label for="angle">Angle:</label><input id="angle" type="number" class="form-control mb-1" />
             </div>
             <div class="col-lg-1">
-                <label for="startAngle">Start Angle:</label><input id="startAngle" type="number" class="form-control mb-1" />
-            </div>            
+                <label for="startAngle">Start Angle:</label><input id="startAngle" type="number"
+                    class="form-control mb-1" />
+            </div>
             <div class="col-lg-1">
                 <label for="length">Length:</label><input id="length" type="number" class="form-control mb-1" />
             </div>
             <div class="col-lg-1">
-                <label for="generations">Generations:</label><input id="generations" type="text" class="form-control mb-1" />
+                <label for="generations">Generations:</label><input id="generations" type="text"
+                    class="form-control mb-1" />
             </div>
             <div class="col-lg-1">
-                </br><button type="button" class="btn btn-primary w-100" id="runBtn" disabled>Run</button>
-            </div>            
+                </br><button type="button" class="btn btn-primary w-100 mb-1" id="runBtn" disabled>Run</button>
+            </div>
         </div>
         <div class="ratio ratio-1x1">
             <svg id="canvas" xmlns="http://www.w3.org/2000/svg"></svg>
-        </div>        
+        </div>
+        <hr>
+        <div class="row text-end mb-3">
+            <span>Source code: <a href="https://github.com/molenjin/LSystems">GitHub</a></span>
+        </div>
     </div>
 </body>
 
