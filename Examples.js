@@ -42,7 +42,7 @@ const examplesJson = {
             "startAngle": 180,
             "startX": 0,
             "startY": 0,
-            "length": 8,
+            "length": 6,
             "generations": 6
         }                          
     ]
