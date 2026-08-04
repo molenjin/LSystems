@@ -2,7 +2,7 @@ const examplesJson = {
 
     "examples": [
         {
-            "name": "Koch Flake",
+            "name": "Koch Flake 4-Gen",
             "seed": "F--F--F",
             "rule": "F+F--F+F",
             "angle": 60,
@@ -11,7 +11,18 @@ const examplesJson = {
             "startY": 0,
             "length": 10,
             "generations": 4
-        },      
+        },  
+        {
+            "name": "Koch Flake 5-Gen",
+            "seed": "F--F--F",
+            "rule": "F+F--F+F",
+            "angle": 60,
+            "startAngle": 0,
+            "startX": 0,
+            "startY": 0,
+            "length": 3.5,
+            "generations": 5
+        },             
         {
             "name": "Two-branch Tree", 
             "seed": "F",
@@ -53,7 +64,7 @@ const examplesJson = {
             "startAngle": 180,
             "startX": 0,
             "startY": 0,
-            "length": 3,
+            "length": 4,
             "generations": 4
         },         
         {
