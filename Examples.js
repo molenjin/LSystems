@@ -20,19 +20,19 @@ const examplesJson = {
             "startAngle": 180,
             "startX": 0,
             "startY": 0,
-            "length": 5,
+            "length": 4,
             "generations": 4
         },        
         {
             "name": "Two-branch Tree", 
             "seed": "F",
-            "rule": "F[-F][+F]",
-            "angle": 10,
+            "rule": "F[-F][++F]",
+            "angle": 8,
             "startAngle": -90,
             "startX": 0,
             "startY": 0,
-            "length": 40,
-            "generations": 6
+            "length": 35,
+            "generations": 8
         },
         {
             "name": "Three-branch Tree",
@@ -75,7 +75,7 @@ const examplesJson = {
             "startAngle": 45,
             "startX": 0,
             "startY": 0,
-            "length": 4,
+            "length": 3,
             "generations": 4
         }                                             
     ]
