@@ -64,8 +64,8 @@ const examplesJson = {
             "startAngle": 0,
             "startX": 0,
             "startY": 0,
-            "length": 8,
-            "generations": 5
+            "length": 14,
+            "generations": 4
         },
         {
             "name": "Woven Wire",

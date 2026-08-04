@@ -7,11 +7,25 @@
 
 <body>
     <div class="container">
-        <div class="row mb-3">
-            <span><strong>L-Systems</strong> by <a href="mailto:molenjin@gmail.com">M.Olenjin</a></span>
+        <div class="row mt-3">
+            <div class="col">
+                <strong>L-System Fractal Generator</strong>
+            </div>
+            <div class="col text-end">
+                by <a href="mailto:molenjin@gmail.com">M.Olenjin</a>
+            </div>
         </div>
         <hr>
         <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="ratio ratio-1x1">
+                    <svg id="canvas" xmlns="http://www.w3.org/2000/svg"></svg>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+        <div class="row gx-1 align-items-end">
             <div class="col-lg-2">
                 <label for="examples">Examples:</label><select name="examples" class="form-select mb-1" id="examples"
                     holder=""></select>
@@ -19,7 +33,7 @@
             <div class="col-lg-2">
                 <label for="seed">Seed:</label><input id="seed" type="text" class="form-control mb-1" />
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-3">
                 <label for="rule">Rule:</label><input id="rule" type="text" class="form-control mb-1" />
             </div>
             <div class="col-lg-1">
@@ -39,9 +53,6 @@
             <div class="col-lg-1">
                 </br><button type="button" class="btn btn-primary w-100 mb-1" id="runBtn" disabled>Run</button>
             </div>
-        </div>
-        <div class="ratio ratio-1x1">
-            <svg id="canvas" xmlns="http://www.w3.org/2000/svg"></svg>
         </div>
         <hr>
         <div class="row text-end mb-3">
