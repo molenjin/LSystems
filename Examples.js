@@ -11,18 +11,7 @@ const examplesJson = {
             "startY": 0,
             "length": 10,
             "generations": 4
-        },
-        {
-            "name": "Pentastar", 
-            "seed": "F+F+F+F+F",
-            "rule": "F+F-F-F+F",
-            "angle": 72,
-            "startAngle": 180,
-            "startX": 0,
-            "startY": 0,
-            "length": 4,
-            "generations": 4
-        },        
+        },      
         {
             "name": "Two-branch Tree", 
             "seed": "F",
@@ -56,6 +45,17 @@ const examplesJson = {
             "length": 6,
             "generations": 6
         },
+        {
+            "name": "Pentastar", 
+            "seed": "F+F+F+F+F",
+            "rule": "F+F-F-F+F",
+            "angle": 72,
+            "startAngle": 180,
+            "startX": 0,
+            "startY": 0,
+            "length": 3,
+            "generations": 4
+        },         
         {
             "name": "Curly Maze",
             "seed": "F+F+F+F",
