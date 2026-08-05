@@ -72,7 +72,7 @@ const examplesJson = {
             "generations": 4
         },
         {
-            "name": "Classy Paving",
+            "name": "Classy Pavement",
             "seed": "F+F+F+F",
             "rule": "F-F+F+F",
             "angle": 45,
