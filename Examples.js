@@ -40,6 +40,14 @@ const examplesJson = {
             "generations": 5
         },
         {
+            "name": "Wool Yarn",
+            "seed": "F+F+F+F+F+F",
+            "rule": "F-FFF-",
+            "angle": 60,
+            "startAngle": 0,
+            "generations": 4
+        },        
+        {
             "name": "Pentagon Twirl",
             "seed": "F+F+F+F+F",
             "rule": "F[+F]F",
@@ -72,12 +80,28 @@ const examplesJson = {
             "generations": 4
         },
         {
-            "name": "Classy Pavement",
+            "name": "Garden Pavement",
             "seed": "F+F+F+F",
             "rule": "F-F+F+F",
             "angle": 45,
             "startAngle": 0,
             "generations": 5
-        }                                                      
+        },
+        {
+            "name": "Kaleidoscope",
+            "seed": "F-F-F-F-F-F",
+            "rule": "F+F---F+F",
+            "angle": 30,
+            "startAngle": 15,
+            "generations": 5
+        },
+        {
+            "name": "Camera Aperture",
+            "seed": "F++F++F++F++F++F",
+            "rule": "FF[F---F]",
+            "angle": 30,
+            "startAngle": 0,
+            "generations": 6
+        }                                                                        
     ]
 };
