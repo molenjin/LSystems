@@ -2,7 +2,7 @@ const examplesJson = {
 
     "examples": [
         {
-            "name": "Koch Flake 4-Gen",
+            "name": "Koch Flake 4-gen",
             "seed": "F--F--F",
             "rule": "F+F--F+F",
             "angle": 60,
@@ -12,7 +12,7 @@ const examplesJson = {
             "generations": 4
         },  
         {
-            "name": "Koch Flake 5-Gen",
+            "name": "Koch Flake 5-gen",
             "seed": "F--F--F",
             "rule": "F+F--F+F",
             "angle": 60,
@@ -40,13 +40,21 @@ const examplesJson = {
             "generations": 5
         },
         {
-            "name": "Wool Yarn",
+            "name": "Wool Yarn 4-gen",
             "seed": "F+F+F+F+F+F",
             "rule": "F-FFF-",
             "angle": 60,
             "startAngle": 0,
             "generations": 4
-        },        
+        },    
+        {
+            "name": "Wool Yarn 5-gen",
+            "seed": "F+F+F+F+F+F",
+            "rule": "F-FFF-",
+            "angle": 60,
+            "startAngle": 0,
+            "generations": 5
+        },                
         {
             "name": "Pentagon Twirl",
             "seed": "F+F+F+F+F",
@@ -101,7 +109,7 @@ const examplesJson = {
             "rule": "FF[F---F]",
             "angle": 30,
             "startAngle": 0,
-            "generations": 6
+            "generations": 5
         }                                                                        
     ]
 };

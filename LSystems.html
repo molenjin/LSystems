@@ -1,8 +1,7 @@
 <head>
     <!-- Primary SEO Meta Tags -->
     <title>L-System Fractal Generator</title>
-    <meta name="description"
-        content="Generate and visualise beautiful 2D L-System fractals in your browser.">
+    <meta name="description" content="Generate and visualise beautiful 2D L-System fractals in your browser.">
     <meta name="keywords"
         content="L-system fractal generator, Lindenmayer systems, procedural plant growth, turtle graphics simulator, context-free grammar fractals, Koch curve generator">
     <meta name="robots" content="index, follow">
@@ -41,14 +40,19 @@
             <div class="col-lg-3"></div>
         </div>
         <div class="row gx-1 align-items-end">
-            <div class="col-lg-2">
-                <label for="examples">Examples:</label><select name="examples" class="form-select mb-1" id="examples"
-                    holder=""></select>
+            <div class="col-lg-4 d-flex">
+                <div class="flex-grow-1">
+                    <label for="examples">Examples:</label><select name="examples" class="form-select mb-1"
+                        id="examples" holder=""></select>
+                </div>
+                <div class="ms-1">
+                    </br><button type="button" class="btn btn-primary mb-1" id="nextBtn">Next</button>
+                </div>
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <label for="seed">Seed:</label><input id="seed" type="text" class="form-control mb-1" />
             </div>
-            <div class="col-lg-3">
+            <div class="col-lg-2">
                 <label for="rule">Rule:</label><input id="rule" type="text" class="form-control mb-1" />
             </div>
             <div class="col-lg-1">
@@ -99,6 +103,11 @@
     document.querySelectorAll("input").forEach(input => input.addEventListener("input", () => {
         runBtn.disabled = false;
     }));
+
+    document.getElementById("nextBtn").addEventListener("click", () => {
+        examples.selectedIndex = (examples.selectedIndex + 1) % examples.options.length;;
+        examples.dispatchEvent(new Event('change'));
+    });
 
     document.getElementById("runBtn").addEventListener("click", () => {
 
