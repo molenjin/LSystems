@@ -10,7 +10,7 @@ const examplesJson = {
             "startX": 0,
             "startY": 0,
             "generations": 4
-        },  
+        },
         {
             "name": "Koch Flake 5-gen",
             "seed": "F--F--F",
@@ -20,9 +20,9 @@ const examplesJson = {
             "startX": 0,
             "startY": 0,
             "generations": 5
-        },             
+        },
         {
-            "name": "Two-branch Tree", 
+            "name": "Two-branch Tree",
             "seed": "F",
             "rule": "F[-F][++F]",
             "angle": 8,
@@ -36,25 +36,17 @@ const examplesJson = {
             "seed": "F-F+F",
             "rule": "F[-F][+F][++F]",
             "angle": 12,
-            "startAngle": -90,
+            "startAngle": 270,
             "generations": 5
         },
         {
-            "name": "Wool Yarn 4-gen",
-            "seed": "F+F+F+F+F+F",
-            "rule": "F-FFF-",
-            "angle": 60,
-            "startAngle": 0,
-            "generations": 4
-        },    
-        {
-            "name": "Wool Yarn 5-gen",
-            "seed": "F+F+F+F+F+F",
-            "rule": "F-FFF-",
-            "angle": 60,
-            "startAngle": 0,
+            "name": "Windy Tree",
+            "seed": "F[F][+FF][++F]",
+            "rule": "F[F----FF+F]F",
+            "angle": 8,
+            "startAngle": 270,
             "generations": 5
-        },                
+        },
         {
             "name": "Pentagon Twirl",
             "seed": "F+F+F+F+F",
@@ -64,13 +56,29 @@ const examplesJson = {
             "generations": 6
         },
         {
-            "name": "Fuzzy Star", 
+            "name": "Fuzzy Star",
             "seed": "F+F+F+F+F",
             "rule": "F+F-F-F+F",
             "angle": 72,
             "startAngle": 180,
             "generations": 4
-        },         
+        },
+        {
+            "name": "Shuriken",
+            "seed": "F+F+F+F+F",
+            "rule": "F--F-F",
+            "angle": 72,
+            "startAngle": 36,
+            "generations": 4
+        },
+        {
+            "name": "A Piece of Puzzle",
+            "seed": "F+F+F+F",
+            "rule": "F-F+F--",
+            "angle": 90,
+            "startAngle": 0,
+            "generations": 5
+        },
         {
             "name": "Curly Maze",
             "seed": "F+F+F+F",
@@ -110,6 +118,14 @@ const examplesJson = {
             "angle": 30,
             "startAngle": 0,
             "generations": 5
-        }                                                                        
+        },
+        {
+            "name": "Ring of Power",
+            "seed": "F+F+F+F+F+F",
+            "rule": "F-FFF-",
+            "angle": 60,
+            "startAngle": 0,
+            "generations": 5
+        }
     ]
 };
