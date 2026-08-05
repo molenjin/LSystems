@@ -15,7 +15,7 @@
                 by <a href="mailto:molenjin@gmail.com">M.Olenjin</a>
             </div>
         </div>
-        <hr>
+        <hr class="my-1">
         <div class="row">
             <div class="col-lg-3"></div>
             <div class="col-lg-6">
@@ -30,7 +30,7 @@
                 <label for="examples">Examples:</label><select name="examples" class="form-select mb-1" id="examples"
                     holder=""></select>
             </div>
-            <div class="col-lg-2">
+            <div class="col-lg-3">
                 <label for="seed">Seed:</label><input id="seed" type="text" class="form-control mb-1" />
             </div>
             <div class="col-lg-3">
@@ -44,9 +44,6 @@
                     class="form-control mb-1" />
             </div>
             <div class="col-lg-1">
-                <label for="length">Length:</label><input id="length" type="number" class="form-control mb-1" />
-            </div>
-            <div class="col-lg-1">
                 <label for="generations">Generations:</label><input id="generations" type="number"
                     class="form-control mb-1" />
             </div>
@@ -54,7 +51,7 @@
                 </br><button type="button" class="btn btn-primary w-100 mb-1" id="runBtn" disabled>Run</button>
             </div>
         </div>
-        <hr>
+        <hr class="my-1">
         <div class="row text-end mb-3">
             <span>Source code: <a href="https://github.com/molenjin/LSystems">GitHub</a></span>
         </div>
@@ -75,12 +72,11 @@
         document.getElementById("rule").value = selected.rule;
         document.getElementById("angle").value = parseInt(selected.angle);
         document.getElementById("startAngle").value = parseInt(selected.startAngle);
-        document.getElementById("length").value = parseInt(selected.length);
         document.getElementById("generations").value = parseInt(selected.generations);
 
         runBtn.disabled = true;
 
-        runSystem(selected.seed, selected.rule, selected.angle, selected.startAngle, selected.length, selected.generations);
+        runSystem(selected.seed, selected.rule, selected.angle, selected.startAngle, selected.generations);
     });
 
     examples.dispatchEvent(new Event('change'));
@@ -133,14 +129,6 @@
             return;
         }
 
-        //-------------------------------------------------------------------        
-
-        const length = parseFloat(document.getElementById("length").value);
-        if (isNaN(length)) {
-            alert("Length must be a number.");
-            return;
-        }
-
         //-------------------------------------------------------------------
 
         const generations = parseInt(document.getElementById("generations").value);
@@ -163,6 +151,6 @@
 
         //-------------------------------------------------------------------
 
-        runSystem(seed, rule, angle, startAngle, length, generations);
+        runSystem(seed, rule, angle, startAngle, generations);
     });
 </script>

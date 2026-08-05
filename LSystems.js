@@ -1,4 +1,4 @@
-function runSystem(seed, rule, angle, startAngle, length, generations) {
+function runSystem(seed, rule, angle, startAngle, generations) {
 
     const canvas = document.getElementById("canvas");
     canvas.innerHTML = "";
@@ -10,8 +10,8 @@ function runSystem(seed, rule, angle, startAngle, length, generations) {
                 if (gen < generations) {
                     drawLSystem(rule, gen + 1, draw);
                 } else {
-                    const newX = currentX + parseFloat(length) * Math.cos(currentAngle * (Math.PI / 180));
-                    const newY = currentY + parseFloat(length) * Math.sin(currentAngle * (Math.PI / 180));
+                    const newX = currentX + Math.cos(currentAngle * (Math.PI / 180)) * scale;
+                    const newY = currentY + Math.sin(currentAngle * (Math.PI / 180)) * scale;
 
                     if (draw) {
                         const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
@@ -52,15 +52,24 @@ function runSystem(seed, rule, angle, startAngle, length, generations) {
     let currentY = 0;
     let currentAngle = parseFloat(startAngle);
 
-    let minX = 10000.0;
-    let maxX = -10000.0;
-    let minY = 10000.0;
-    let maxY = -10000.0;
+    let minX = 0;
+    let maxX = 0;
+    let minY = 0;
+    let maxY = 0;
+
+    let scaleX = 1.0;
+    let scaleY = 1.0;
+    let scale = 1.0;
 
     drawLSystem(seed, 1, false);
 
-    currentX = (canvas.width.baseVal.value / 2) - ((maxX + minX) / 2);
-    currentY = (canvas.height.baseVal.value / 2) - ((maxY + minY) / 2);
+    scaleX = canvas.width.baseVal.value / (maxX - minX);
+    scaleY = canvas.height.baseVal.value / (maxY - minY);
+    scale = Math.min(scaleX, scaleY) * 0.9;
+
+    currentX = ((canvas.width.baseVal.value / 2) - ((maxX * scale + minX * scale) / 2));
+    currentY = ((canvas.height.baseVal.value / 2) - ((maxY * scale + minY * scale) / 2));
+
     currentAngle = parseFloat(startAngle);
 
     drawLSystem(seed, 1, true);

@@ -9,7 +9,6 @@ const examplesJson = {
             "startAngle": 0,
             "startX": 0,
             "startY": 0,
-            "length": 10,
             "generations": 4
         },  
         {
@@ -20,7 +19,6 @@ const examplesJson = {
             "startAngle": 0,
             "startX": 0,
             "startY": 0,
-            "length": 3.5,
             "generations": 5
         },             
         {
@@ -31,7 +29,6 @@ const examplesJson = {
             "startAngle": -90,
             "startX": 0,
             "startY": 0,
-            "length": 35,
             "generations": 8
         },
         {
@@ -40,9 +37,6 @@ const examplesJson = {
             "rule": "F[-F][+F][++F]",
             "angle": 12,
             "startAngle": -90,
-            "startX": 0,
-            "startY": 0,
-            "length": 50,
             "generations": 5
         },
         {
@@ -51,20 +45,14 @@ const examplesJson = {
             "rule": "F[+F]F",
             "angle": 72,
             "startAngle": 180,
-            "startX": 0,
-            "startY": 0,
-            "length": 6,
             "generations": 6
         },
         {
-            "name": "Pentastar", 
+            "name": "Fuzzy Star", 
             "seed": "F+F+F+F+F",
             "rule": "F+F-F-F+F",
             "angle": 72,
             "startAngle": 180,
-            "startX": 0,
-            "startY": 0,
-            "length": 4,
             "generations": 4
         },         
         {
@@ -73,9 +61,6 @@ const examplesJson = {
             "rule": "F[F-F+F+F]F",
             "angle": 90,
             "startAngle": 0,
-            "startX": 0,
-            "startY": 0,
-            "length": 14,
             "generations": 4
         },
         {
@@ -84,10 +69,15 @@ const examplesJson = {
             "rule": "FF[-FF][+FF]FF",
             "angle": 90,
             "startAngle": 45,
-            "startX": 0,
-            "startY": 0,
-            "length": 3,
             "generations": 4
-        }                                             
+        },
+        {
+            "name": "Classy Paving",
+            "seed": "F+F+F+F",
+            "rule": "F-F+F+F",
+            "angle": 45,
+            "startAngle": 0,
+            "generations": 5
+        }                                                      
     ]
 };
