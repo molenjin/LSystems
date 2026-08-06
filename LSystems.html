@@ -46,10 +46,10 @@
                         id="examples" holder=""></select>
                 </div>
                 <div class="ms-1">
-                    </br><button type="button" class="btn btn-primary mb-1" id="prevBtn">Prev</button>
+                    </br><button type="button" class="btn btn-primary mb-1" style="touch-action: manipulation;" id="prevBtn">Prev</button>
                 </div>
                 <div class="ms-1">
-                    </br><button type="button" class="btn btn-primary mb-1" id="nextBtn">Next</button>
+                    </br><button type="button" class="btn btn-primary mb-1" style="touch-action: manipulation;" id="nextBtn">Next</button>
                 </div>
             </div>
             <div class="col-lg-2">
@@ -99,9 +99,7 @@
         runBtn.disabled = true;
 
         runSystem(selected.seed, selected.rule, selected.angle, selected.startAngle, selected.generations);
-    });
-
-    examples.dispatchEvent(new Event('change'));
+    });    
 
     document.querySelectorAll("input").forEach(input => input.addEventListener("input", () => {
         runBtn.disabled = false;
@@ -185,4 +183,6 @@
 
         runSystem(seed, rule, angle, startAngle, generations);
     });
+
+    examples.dispatchEvent(new Event('change'));
 </script>
