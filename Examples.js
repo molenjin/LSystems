@@ -48,6 +48,22 @@ const examplesJson = {
             "generations": 5
         },
         {
+            "name": "Christmas Joy",
+            "seed": "F",
+            "rule": "[-F][+F]FF",
+            "angle": 45,
+            "startAngle": 270,
+            "generations": 7
+        },    
+        {
+            "name": "Horsetail Plant",
+            "seed": "F",
+            "rule": "[-F][+F]FF",
+            "angle": 20,
+            "startAngle": 270,
+            "generations": 7
+        },             
+        {
             "name": "Pentagon Twirl",
             "seed": "F+F+F+F+F",
             "rule": "F[+F]F",
