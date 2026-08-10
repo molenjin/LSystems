@@ -47,7 +47,7 @@ function runSystem(seed, rule, angle, startAngle, generations) {
             }
         }
     }
-
+alert("runSystem called with parameters: " + seed + ", " + rule + ", " + angle + ", " + startAngle + ", " + generations);
     let currentX = 0;
     let currentY = 0;
     let currentAngle = parseFloat(startAngle);
