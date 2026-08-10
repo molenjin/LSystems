@@ -46,28 +46,38 @@
                         id="examples" holder=""></select>
                 </div>
                 <div class="ms-1">
-                    </br><button type="button" class="btn btn-primary mb-1" style="touch-action: manipulation;" id="prevBtn">Prev</button>
+                    </br><button type="button" class="btn btn-primary mb-1" style="touch-action: manipulation;"
+                        id="prevBtn">Prev</button>
                 </div>
                 <div class="ms-1">
-                    </br><button type="button" class="btn btn-primary mb-1" style="touch-action: manipulation;" id="nextBtn">Next</button>
+                    </br><button type="button" class="btn btn-primary mb-1" style="touch-action: manipulation;"
+                        id="nextBtn">Next</button>
                 </div>
             </div>
-            <div class="col-lg-2">
-                <label for="seed">Seed:</label><input id="seed" type="text" class="form-control mb-1" />
+            <div class="col-lg-4">
+                <div class="row gx-1">
+                    <div class="col">
+                        <label for="seed">Seed:</label><input id="seed" type="text" class="form-control mb-1" />
+                    </div>
+                    <div class="col">
+                        <label for="rule">Rule:</label><input id="rule" type="text" class="form-control mb-1" />
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-2">
-                <label for="rule">Rule:</label><input id="rule" type="text" class="form-control mb-1" />
-            </div>
-            <div class="col-lg-1">
-                <label for="angle">Angle:</label><input id="angle" type="number" class="form-control mb-1" />
-            </div>
-            <div class="col-lg-1">
-                <label for="startAngle">Start Angle:</label><input id="startAngle" type="number"
-                    class="form-control mb-1" />
-            </div>
-            <div class="col-lg-1">
-                <label for="generations">Generations:</label><input id="generations" type="number"
-                    class="form-control mb-1" />
+            <div class="col-lg-3">
+                <div class="row gx-1">
+                    <div class="col">
+                        <label for="angle">Angle:</label><input id="angle" type="number" class="form-control mb-1" />
+                    </div>
+                    <div class="col">
+                        <label for="startAngle">Start Angle:</label><input id="startAngle" type="number"
+                            class="form-control mb-1" />
+                    </div>
+                    <div class="col">
+                        <label for="generations">Generations:</label><input id="generations" type="number"
+                            class="form-control mb-1" />
+                    </div>
+                </div>
             </div>
             <div class="col-lg-1">
                 </br><button type="button" class="btn btn-primary w-100 mb-1" id="runBtn" disabled>Run</button>
@@ -99,7 +109,7 @@
         runBtn.disabled = true;
 
         runSystem(selected.seed, selected.rule, parseFloat(selected.angle), parseFloat(selected.startAngle), parseInt(selected.generations));
-    });    
+    });
 
     document.querySelectorAll("input").forEach(input => input.addEventListener("input", () => {
         runBtn.disabled = false;
