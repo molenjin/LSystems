@@ -72,13 +72,21 @@ const examplesJson = {
             "generations": 6
         },
         {
+            "name": "Regular Star",
+            "seed": "F--F--F",
+            "rule": "F+F--F+F",
+            "angle": 72,
+            "startAngle": 180,
+            "generations": 5
+        },        
+        {
             "name": "Fuzzy Star",
             "seed": "F+F+F+F+F",
             "rule": "F+F-F-F+F",
             "angle": 72,
             "startAngle": 180,
             "generations": 4
-        },
+        },        
         {
             "name": "Shuriken",
             "seed": "F+F+F+F+F",
@@ -135,6 +143,14 @@ const examplesJson = {
             "startAngle": 0,
             "generations": 5
         },
+        {
+            "name": "Wheat Wreath",
+            "seed": "F+F+F+F+F+F+F+F",
+            "rule": "F-F++F+F",
+            "angle": 60,
+            "startAngle": 0,
+            "generations": 4
+        },        
         {
             "name": "Ring of Power",
             "seed": "F+F+F+F+F+F",
