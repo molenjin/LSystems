@@ -165,7 +165,7 @@ const examplesJson = {
         },
         {
             "name": "Wheat Wreath",
-            "seed": "F+F+F+F+F+F+F+F",
+            "seed": "F+F+F+F+F+F",
             "rule": "F-F++F+F",
             "angle": 60,
             "startAngle": 0,
