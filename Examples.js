@@ -22,6 +22,26 @@ const examplesJson = {
             "generations": 5
         },
         {
+            "name": "Pascal Triangle",
+            "seed": "F-F-F",
+            "rule": "F[-F]F",
+            "angle": 120,
+            "startAngle": 0,
+            "startX": 0,
+            "startY": 0,
+            "generations": 6
+        },   
+        {
+            "name": "Outward Triangle",
+            "seed": "F-F-F",
+            "rule": "F[+F-F-F]F",
+            "angle": 120,
+            "startAngle": 0,
+            "startX": 0,
+            "startY": 0,
+            "generations": 5
+        },               
+        {
             "name": "Two-branch Tree",
             "seed": "F",
             "rule": "F[-F][++F]",
